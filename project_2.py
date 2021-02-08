@@ -8,7 +8,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 
-def check_input(input_str, input_type):
+def check_input_user(input_str, input_type):
     while True:
         input_read=input(input_str).lower()
         try:
@@ -40,12 +40,14 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = check_input('Would you like to see data for chicago , new york city ,washington', 1)
+    city = check_input_user('Would you like to see data for chicago , new york city ,washington', 1)
+
+
     # TO DO: get user input for month (all, january, february, ... , june)
-    month = check_input('which month?', 2)
+    month = check_input_user('which month?', 2)
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = check_input('which day?', 3)
+    day = check_input_user('which day?', 3)
     print('-'*40)
     return city, month, day
 
@@ -167,13 +169,13 @@ def raw_data(df):
     if display_raw_input in ("yes", "y"):
         i = 0
         while True:
-            if (i + 5 > len(df.index) - 1):
+            if (i + 10 > len(df.index) - 1):
 
                 print(df.iloc[i:len(df.index), :])
                 print("You've reached the end of the rows")
                 break
-            print(df.iloc[i:i + 5, :])
-            i += 5
+            print(df.iloc[i:i + 10, :])
+            i += 10
 
             show_next_five_input = input("\nWWould you like to see more row data? Enter 'yes' or 'no'\n").strip().lower()
             if show_next_five_input not in ("yes", "y"):
