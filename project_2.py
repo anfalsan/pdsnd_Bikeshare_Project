@@ -41,6 +41,8 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = check_input('Would you like to see data for chicago , new york city ,washington', 1)
+    print('Note: Washington may lack user data')
+
     # TO DO: get user input for month (all, january, february, ... , june)
     month = check_input('which month?', 2)
 
@@ -167,13 +169,13 @@ def raw_data(df):
     if display_raw_input in ("yes", "y"):
         i = 0
         while True:
-            if (i + 5 > len(df.index) - 1):
+            if (i + 10 > len(df.index) - 1):
 
                 print(df.iloc[i:len(df.index), :])
                 print("You've reached the end of the rows")
                 break
-            print(df.iloc[i:i + 5, :])
-            i += 5
+            print(df.iloc[i:i + 10, :])
+            i += 10
 
             show_next_five_input = input("\nWWould you like to see more row data? Enter 'yes' or 'no'\n").strip().lower()
             if show_next_five_input not in ("yes", "y"):
