@@ -7,6 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+# The user is input one of the months of the first half of the year or all
 
 def check_input_user(input_str, input_type):
     while True:
