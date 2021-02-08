@@ -8,7 +8,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 
-def check_input(input_str, input_type):
+def check_input_user(input_str, input_type):
     while True:
         input_read=input(input_str).lower()
         try:
@@ -40,14 +40,14 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = check_input('Would you like to see data for chicago , new york city ,washington', 1)
-    print('Note: Washington may lack user data')
+    city = check_input_user('Would you like to see data for chicago , new york city ,washington', 1)
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    month = check_input('which month?', 2)
+    month = check_input_user('which month?', 2)
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = check_input('which day?', 3)
+    day = check_input_user('which day?', 3)
     print('-'*40)
     return city, month, day
 
